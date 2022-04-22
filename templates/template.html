@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+
+        <title>Superheros Battle Results</title>
+
+
+        <!------- STYLES ----------------------------------------------------->
+        <style type="text/css">
+          body {margin: 0 !important; padding: 0; min-width: 100%!important;}
+          .content {
+            width: 100%;
+            max-width: 600px;
+            font-family: 'Akshar', sans-serif;
+          }
+          @media only screen and (max-device-width: 601px) {
+            .content {width: 100% !important;}
+            .fluid{display: block; width: 100%;}
+            .fluid table td tr,.fluid table tbody {width: 100% !important; display: block !important;}
+
+            .col425 {width: 425px!important;}
+            .col380 {width: 380px!important;}
+            .box-text{min-height: inherit !important;}
+          }
+          .header {
+            padding:0px;
+            margin:20px;
+            height:170px;
+            background-color:#d2d2d2;
+          }
+          .header p {
+            color: #7e7e7e;
+            margin:0px;
+            font-family: 'Bungee', cursive;
+          }
+
+          .header h1 {
+            color: #373737;
+            font-size: 42px;
+            margin:10px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            font-family: 'Bungee Shade', cursive;
+          }
+
+          .sub_header {
+            padding:0px;
+            margin:20px;
+            height:50px;
+            background-color:#c6cfff;
+          }
+          .sub_header p {
+            color: #3850c9;
+            margin:0px;
+          }
+          .sub_header h1 {
+            color: #3850c9;
+            font-size: 22px;
+            margin:8px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-family: 'Bungee', cursive;
+          }
+
+          .separator {
+            background-color: #f2f2f2;
+          }
+          .loser {
+            background-color:#ffc9c9;
+          }
+          .loser h1 {
+            color:#c52d25;
+            font-family: 'Bungee', cursive;
+          }
+          .loser h1 span{
+            color:#90201a;
+          }
+          .winner {
+            background-color:#b5efac;
+          }
+          .winner h1 {
+            color:#21a058;
+            font-family: 'Bungee', cursive;
+          }
+          .winner h1 span{
+            color:#146838;
+          }
+          .fight_detail {
+            margin:10px;
+            height:20px;
+            padding:0px;
+            background-color:#d2d2d2;
+            border: #b6b6b6 solid 1px;
+          }
+          .fight_detail h1 {
+            font-size: 18px;
+            margin:7px;
+          }
+          .footer {
+            height:60px;
+            padding:15px 15px 15px 15px;
+            background-color:#d2d2d2;
+          }
+          .iconbox {
+              width: 600px;
+          }
+          .iconbox > div {
+              text-align: center;
+              width: 19%;
+              display: inline-block;
+              margin: 0px;
+          }
+          .iconbox > div img {
+            margin:10px;
+            height:120px;
+          }
+          .iconbox p {
+            text-align: center;
+            margin: 0;
+            margin-bottom: 3px;
+            width: 100%;
+            font-size: 13px;
+          }
+        </style>
+        <!-------------------------------------------------------------------->
+
+    </head>
+
+    <body yahoo bgcolor="#F2F2F2">
+      <table bgcolor="#F2F2F2"  width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding:15px 15px 15px 15px;">
+              <tr>
+                <td>
+                    <table class="content" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+
+                      <!------- HEADER ----------------------------------------------------->
+                      <tr>
+                        <td class="header" align="center">
+                          <p><span>L</span>iga <span>I</span>nter<span>D</span>imensional de <span>S</span>uperhéroes</p>
+                          <h1>RESUMEN DE BATALLAS</h1>
+                        </td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+                      <!------- SEPARADOR -------------------------------------------------->
+                      <tr>
+                        <td class="separator" style="height:20px;"></td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+
+
+                      <!------- TÍTULO CORREO ---------------------------------------------->
+                      <tr>
+                        <td  class="sub_header" align="center">
+                          <h1><b>Última Fecha   -  {{ date }}</b></h1>
+                        </td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+                      <!------- SEPARADOR -------------------------------------------------->
+                      <tr>
+                        <td class="separator" style="height:20px;"></td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+
+
+                      <!------- EQUIPO GANADOR --------------------------------------------->
+                      <tr>
+                        <td class="winner" align="center" style="height:30px;padding:0px;margin-top:0px">
+                          <h1 style="font-size: 22px;margin-bottom:0px;">🎉🏆  <span>GANADOR:</span>   EQUIPO Nº{{ winner_team }}  🎉🏆 </h1>
+                        </td>
+                      </tr>                        
+                      <tr>
+                        <td class="winner" align="center" style="background-size:1000px;padding:10px">
+                          <div class="iconbox">
+                              {{#each winner_members}}
+                               <div id="add-icon">
+                                  <img src="{{ this.picture }}" alt="{{ this.name }}"/>
+                                  <p>{{ this.name }}</p>
+                              </div>
+                              {{/each}} 
+                          </div>
+                        </td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+                      <!------- SEPARADOR -------------------------------------------------->
+                      <tr>
+                        <td class="separator" style="height:10px;"></td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+
+
+                      <!------- EQUIPO PERDEDOR -------------------------------------------->
+                      <tr>
+                        <td class="loser" align="center" style="height:30px;padding:0px;margin-top:0px">
+                            <h1 style="font-size: 22px;margin-bottom:0px;">👎🏼❌  <span>PERDEDOR:</span>   EQUIPO Nº{{ loser_team }}  👎🏼❌</h1>
+                        </td>
+                      </tr>                        
+                      <tr>
+                        <td class="loser" align="center" style="background-size:1000px;padding:10px">
+                          <div class="iconbox">
+                              {{#each loser_members}}
+                               <div id="add-icon">
+                                  <img src="{{ this.picture }}" alt="{{ this.name }}"/>
+                                  <p>{{ this.name }}</p>
+                              </div>
+                              {{/each}}
+                          </div>
+                        </td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+                      <!------- SEPARADOR -------------------------------------------------->
+                      <tr>
+                        <td class="separator" style="height:30px;"></td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+
+
+                      {{#each fights}}
+                        {{#if this.is_draw}}
+                          <!------- DETALLE PELEA ---------------------------------------------->
+                          <tr>
+                            <td class="fight_detail" align="center">
+                              <h1>{{ this.fighter_1 }}  🆚  {{ this.fighter_2 }}  →  EMPATE ⚖️</h1>
+                            </td>
+                          </tr>
+                          <!-------------------------------------------------------------------->
+                        {{else}}
+                          <!------- DETALLE PELEA ---------------------------------------------->
+                          <tr>
+                            <td class="fight_detail" align="center">
+                              <h1>{{ this.fighter_1 }}  🆚  {{ this.fighter_2 }}  →  {{ this.winner }} 🥇</h1>
+                            </td>
+                          </tr>
+                          <!-------------------------------------------------------------------->
+                        {{/if}}
+                        <!------- SEPARADOR -------------------------------------------------->
+                        <tr>
+                          <td class="separator" style="height:8px;"></td>
+                        </tr>
+                        <!-------------------------------------------------------------------->
+                      {{/each}}
+
+
+
+                      <!------- SEPARADOR -------------------------------------------------->
+                      <tr>
+                        <td class="separator" style="height:20px;"></td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+                      <!------- FOOTER ----------------------------------------------------->
+                      <tr>
+                        <td class="footer"></td>
+                      </tr>
+                      <!-------------------------------------------------------------------->
+
+                  </table> 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </body>
+</html>
