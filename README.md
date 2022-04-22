@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/58790635/164586538-9c2fcfa8-0deb-4bd1-b3dd-20fd1f97ffc6.png" width="500"/>
 
 # Inter-Dimensional Superhero League
-A Python simulation of battles between random teams of superheros and villans from all your favorites multiverses.
+A Python simulation of battles between random teams of superheroes and villains from all your favorites multiverses.
 
 <img src="https://user-images.githubusercontent.com/58790635/164584304-ce1a98bb-c07f-4a1d-b1ed-c498e5900008.png"  width="1250"/>
 </div>
