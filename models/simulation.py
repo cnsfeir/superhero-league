@@ -1,22 +1,21 @@
 
 import arrow
+from dataclasses import dataclass, field
 from itertools import permutations
 from random import choice, shuffle
 from time import sleep
 from typing import List, Optional, Tuple
-from libs.superhero_interface import SuperHeroInterface
 from models.superhero import SuperHero
 from models.team import Team
-from libs.mailer import send_mail
+from libs.mailer import Mailer
 from libs.utils import VALID_MAILS, SLOW_EXECUTION, ROUNDS_PER_FIGHT, print_fighters, print_teams, bold
 
 
+@dataclass
 class Simulation():
-
-    def __init__(self) -> None:
-        self.fights = []
-        print('\n INITIALIZING TEAMS...')
-        self.team_1, self.team_2 = SuperHeroInterface.get_teams()
+    team_1: Team
+    team_2: Team
+    fights: List[dict] = field(default_factory=list)
 
     @property
     def teams(self) -> List[Team]:
@@ -37,7 +36,7 @@ class Simulation():
         print(f'\n 🎊 TEAM {winner.identifier} WINS! 🎊 \n')
 
         mail = self._get_email()
-        if mail: send_mail(mail, self._build_summary(winner, loser))
+        if mail: Mailer.send_mail(mail, self._build_summary(winner, loser))
         print('\n 👋 SEE YOU IN ANOTHER SIMULATION! \n')
 
     def _get_results(self) -> Tuple[Team, Team]:
