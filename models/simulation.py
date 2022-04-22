@@ -16,8 +16,7 @@ class Simulation():
     def __init__(self) -> None:
         self.fights = []
         print('\n INITIALIZING TEAMS...')
-        self.team_1 = SuperHeroInterface.get_team(1)
-        self.team_2 = SuperHeroInterface.get_team(2)
+        self.team_1, self.team_2 = SuperHeroInterface.get_teams()
 
     @property
     def teams(self) -> List[Team]:

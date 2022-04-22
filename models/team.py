@@ -13,6 +13,7 @@ class Team():
     def __post_init__(self) -> None:
         self._get_alignment()
         self._apply_team_filiation()
+        print(self)
 
     @property
     def is_good(self) -> bool:
@@ -44,6 +45,5 @@ class Team():
         self.alignment = GOOD if len(good_ones) > (len(self.members) // 2) else BAD
 
     def _apply_team_filiation(self) -> None:
-        print(f'\t TEAM ALIGNMENT: {self.alignment.upper()}')
         for member in self.members:
             member.apply_team_filiation(self.alignment)

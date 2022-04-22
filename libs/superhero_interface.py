@@ -1,6 +1,6 @@
 import os, requests, random
 from dotenv import load_dotenv
-from typing import Optional
+from typing import Optional, Tuple
 from models.superhero import SuperHero
 from models.team import Team
 from libs.utils import is_numeric, TOTAL_HEROS, HEROS_PER_TEAM, GOOD
@@ -13,13 +13,13 @@ BASE_URL = f'https://superheroapi.com/api/{ACCESS_TOKEN}/'
 class SuperHeroInterface():
 
     @classmethod
-    def get_team(cls, identifier: int) -> Team:
-        print(f'\n CREATING NEW TEAM...')
-        superheros = random.sample(range(1, TOTAL_HEROS), HEROS_PER_TEAM)
+    def get_teams(cls) -> Tuple[Team, Team]:
+        print(f'\n CREATING TEAMS ...')
+        superheros = random.sample(range(1, TOTAL_HEROS), HEROS_PER_TEAM * 2)
         members = [cls._get_superhero(id_) for id_ in superheros]
-        team = Team(members=members, identifier=identifier)
-        print(team)
-        return team
+        team_1 = Team(members=members[HEROS_PER_TEAM:], identifier=1)
+        team_2 = Team(members=members[:HEROS_PER_TEAM], identifier=2)
+        return team_1, team_2
 
     @classmethod
     def _get_superhero(cls, identifier: int) -> Optional[SuperHero]:
